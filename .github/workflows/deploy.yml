@@ -11,8 +11,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Build
-        run: npm ci
-        run: npm run build
+        run: npm ci && npm run build
       # Deploy
       - name: Deploy
         uses: easingthemes/ssh-deploy@main
