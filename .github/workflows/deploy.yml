@@ -9,14 +9,17 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      # Setup key
-      - run: set -eu
-      - run: mkdir "$HOME/.ssh"
-      - run: echo "${{ secrets.key }}" > "$HOME/.ssh/key"
-      - run: chmod 600 "$HOME/.ssh/key"
-      # Build
+      - uses: actions/checkout@v2
+      - name: Build
       - run: npm ci
       - run: npm run build
       # Deploy
-      - run: cd dist && rsync -avz -e "ssh -p 2022 -i $HOME/.ssh/keys -o StrictHostKeyChecking=no" . cd62625@vh364.timeweb.ru:/home/tntn-market/public_html
+      - name: Deploy
+        uses: easingthemes/ssh-deploy@main
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY_PROD }}
+          ARGS: >-
+            -rltgoDzvO
+          REMOTE_HOST: ${{ secrets.REMOTE_HOST_PROD }}
+          REMOTE_USER: ${{ secrets.REMOTE_USER_PROD }}
+          TARGET: /home/tntn-market/public_html
