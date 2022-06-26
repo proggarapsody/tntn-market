@@ -26,4 +26,4 @@ jobs:
             -rltgoDzvO
           REMOTE_HOST: ${{ secrets.REMOTE_HOST_PROD }}
           REMOTE_USER: ${{ secrets.REMOTE_USER_PROD }}
-          TARGET: /home/tntn-market/public_html/
+          TARGET: ~/tntn-market/public_html/
