@@ -19,4 +19,4 @@ jobs:
       - run: npm ci
       - run: npm run build
       # Deploy
-      - run: cd dist && rsync -e "ssh -p 20022 -i $HOME/.ssh/keys -o StrictHostKeyChecking=no" --archive --compress --delete . cd62625@vh364.timeweb.ru:/home/tntn-market/public_html
+      - run: cd dist && rsync -avz -e "ssh -p 2022 -i $HOME/.ssh/keys -o StrictHostKeyChecking=no" . cd62625@vh364.timeweb.ru:/home/tntn-market/public_html
