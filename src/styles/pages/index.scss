@@ -151,6 +151,7 @@
 
 .product-card {
   display: flex;
+  flex-direction: column;
   width: 11rem;
   cursor: pointer;
   padding: 0.4rem 0.3rem;

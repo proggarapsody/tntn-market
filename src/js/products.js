@@ -14,11 +14,12 @@ window.addEventListener("load", async () => {
 
   if (catalogProducts) {
     products.forEach((product, index) => {
-      if (topProducts) {
-      } else {
-        catalogProducts.innerHTML += `<div class="product-card open-modal" data-index="${index}"><div class="product-card__img-container"><img src="${product.primaryImg}" alt="product-img/></div><p class="product-card__title">${product.name}</p>
+      catalogProducts.innerHTML += `<div class="product-card open-modal" data-index="${index}"><div class="product-card__img-container"><img src="${product.primaryImg}" alt="product-img"/>
+        </div>
+        <p class="product-card__title" >
+        ${product.name}
+        </p>
       </div>`;
-      }
     });
   }
 
