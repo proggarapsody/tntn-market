@@ -20,6 +20,11 @@ tl.from(".header", {
   .to(".header", {
     height: "60vh",
   })
+  .to(".big-icon", {
+    boxShadow: "3px 3px 4px #00000040",
+    transform: "translate(-3px, -3px)",
+    duration: 0.2,
+  })
   .from(".about-item", {
     opacity: 0,
     delay: "-1",
