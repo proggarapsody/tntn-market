@@ -1,0 +1,14 @@
+@import "reset";
+@import "fonts";
+@import "../../node_modules/swiper/swiper-bundle.min.css";
+@import "global";
+
+//components import
+@import "components/header";
+@import "components/footer";
+@import "components/modal";
+
+//pages import
+@import "pages/contacts";
+@import "pages/catalog";
+@import "pages/index";

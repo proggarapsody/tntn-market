@@ -1,0 +1,31 @@
+.footer {
+  background-color: #000000;
+
+  padding: 2rem 0;
+  color: #ffffff;
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__nav-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    font-weight: 500;
+    & a {
+      &:hover {
+        color: #c5ff95;
+      }
+    }
+  }
+}
+.creator-link {
+  align-self: flex-end;
+  font-size: 0.7rem;
+  color: #323232;
+  &:hover {
+    color: #6c0158;
+  }
+}

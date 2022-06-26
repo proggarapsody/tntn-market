@@ -1,0 +1,37 @@
+.contacts {
+  padding-top: 5rem;
+  padding-bottom: 3rem;
+  box-shadow: inset 0px 4px 35px -10px rgba(0, 0, 0, 0.25);
+  &__title {
+    text-align: center;
+    position: relative;
+
+    &::after {
+      width: 30%;
+      position: absolute;
+      bottom: -0.3rem;
+      left: 50%;
+      transform: translateX(-50%);
+      content: "";
+      height: 1px;
+      background-color: rgba(0, 0, 0, 0.25);
+    }
+  }
+
+  &__content {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 6rem;
+    gap: 1rem;
+
+    justify-content: center;
+  }
+  padding-bottom: 10rem;
+}
+
+.contact {
+  &:hover {
+    text-decoration: underline;
+  }
+}

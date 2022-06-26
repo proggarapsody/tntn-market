@@ -1,0 +1,62 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 1.5vw;
+  font-family: "Montserrat";
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+}
+
+a {
+  text-decoration: none;
+}
+
+.site-container {
+  width: 100%;
+  height: 100%;
+}
+
+.container {
+  max-width: 1300px;
+  width: 54rem;
+  padding: 0 40px;
+  margin: 0 auto;
+}
+
+svg {
+  width: fit-content;
+  height: fit-content;
+}
+
+a {
+  color: inherit;
+}
+.title {
+  font-family: "Comfortaa";
+  text-align: center;
+  position: relative;
+
+  &::after {
+    width: 30%;
+    position: absolute;
+    bottom: -0.3rem;
+    left: 50%;
+    transform: translateX(-50%);
+    content: "";
+    height: 1px;
+    background-color: rgba(0, 0, 0, 0.25);
+  }
+}
+
+.highlight {
+  color: #e46872;
+}

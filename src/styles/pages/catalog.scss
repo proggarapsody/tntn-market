@@ -1,0 +1,34 @@
+.products {
+  padding-top: 5rem;
+  padding-bottom: 3rem;
+  box-shadow: inset 0px 4px 35px -10px rgba(0, 0, 0, 0.25);
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 7rem;
+  &__title {
+    text-align: center;
+    position: relative;
+
+    &::after {
+      width: 30%;
+      position: absolute;
+      bottom: -0.3rem;
+      left: 50%;
+      transform: translateX(-50%);
+      content: "";
+      height: 1px;
+      background-color: rgba(0, 0, 0, 0.25);
+    }
+  }
+
+  &__content {
+    width: fit-content;
+    margin: 0 auto;
+    display: flex;
+    margin-top: 6rem;
+    gap: 0.7rem;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+  }
+}
