@@ -17,7 +17,7 @@ tl.from(".header", {
     duration: 0.6,
   })
   .to(".header", {
-    height: window.innerWidth > 790 ? "60vh" : "35vh",
+    height: window.innerWidth > 790 ? "60vh" : "40vh",
   })
   .to(".big-icon", {
     boxShadow: "3px 3px 4px #00000040",
