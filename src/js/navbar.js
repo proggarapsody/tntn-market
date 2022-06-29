@@ -5,11 +5,11 @@ const tl = gsap.timeline();
 
 tl.from(".header", {
   height: "0vh",
-  duration: 0.5,
+  duration: window.innerWidth > 790 ? 0.5 : 1.2,
 })
   .from(".header__nav", {
     opacity: "0",
-    delay: 0.1,
+    delay: 0.2,
   })
   .from(".big-icon", {
     opacity: "0",
@@ -18,6 +18,7 @@ tl.from(".header", {
   })
   .to(".header", {
     height: window.innerWidth > 790 ? "60vh" : "40vh",
+    duration: window.innerWidth > 790 ? 0.5 : 1,
   })
   .to(".big-icon", {
     boxShadow: "3px 3px 4px #00000040",
