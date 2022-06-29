@@ -40,6 +40,7 @@
   },
   "dependencies": {
     "gsap": "^3.10.4",
+    "mini-css-extract-plugin": "^2.6.1",
     "simplebar": "^5.3.8",
     "swiper": "^8.1.0"
   }

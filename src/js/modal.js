@@ -15,7 +15,6 @@ let closeButt = document.querySelector(".modal__close");
 function openModal(product) {
   unloadScrollBars();
 
-  modal.style.display = "block";
   image.innerHTML = `<img class="primary-img" alt="product-img" src="${product.primaryImg}"></img><img class="secondary-img" alt="product-img" src="${product.secondaryImg}"></img>`;
   title.textContent = product.name;
   if (product.description) {
@@ -49,12 +48,17 @@ function openModal(product) {
   if (product.orderLink) {
     links.innerHTML += `<a target="_blank" href="${product.orderLink}" class="order-link">Оформить закупку (Дешевле) ------------</a>`;
   }
+  setTimeout(() => {
+    modal.style.display = "block";
+  }, 300);
 }
 
 // // When the user clicks on <span> (x), close the modal
 if (closeButt) {
   closeButt.onclick = function () {
+    cleanModal();
     modal.style.display = "none";
+
     reloadScrollBars();
   };
 }
@@ -62,10 +66,25 @@ if (closeButt) {
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function (event) {
   if (event.target == modal) {
+    cleanModal();
     modal.style.display = "none";
+
     reloadScrollBars();
   }
 };
+
+function cleanModal() {
+  image.innerHTML = ``;
+  title.textContent = "";
+
+  description.innerHTML = ``;
+
+  usageMethod.innerHTML = ``;
+  compound.innerHTML = ``;
+  kit.innerHTML = ``;
+
+  links.innerHTML = "";
+}
 
 function reloadScrollBars() {
   document.documentElement.style.overflow = "auto"; // firefox, chrome

@@ -60,3 +60,20 @@ a {
 .highlight {
   color: #e46872;
 }
+
+@media (max-width: 780px) {
+  html {
+    font-size: 4vw;
+  }
+  .site-container {
+    max-width: 100vw;
+  }
+  .container {
+    width: 95%;
+    padding: 0 1rem;
+  }
+}
+
+.simplebar-scrollbar::before {
+  width: 0.2rem;
+}

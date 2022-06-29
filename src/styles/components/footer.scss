@@ -14,6 +14,7 @@
     flex-direction: column;
     gap: 0.5rem;
     font-weight: 500;
+    font-size: 0.7rem;
     & a {
       &:hover {
         color: #c5ff95;
@@ -27,5 +28,17 @@
   color: #323232;
   &:hover {
     color: #6c0158;
+  }
+}
+
+@media (max-width: 780px) {
+  .footer__container {
+    position: relative;
+  }
+  .creator-link {
+    position: absolute;
+    bottom: -1rem;
+    right: 0.4rem;
+    font-size: 0.5rem;
   }
 }

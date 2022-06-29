@@ -188,3 +188,29 @@
     }
   }
 }
+
+@media (max-width: 780px) {
+  .modal-content {
+    height: 90vh;
+    width: 90%;
+  }
+
+  .modal__main {
+    flex-direction: column;
+  }
+  .modal__left-side {
+    width: 100%;
+    margin-top: 2rem;
+    background-color: #ffffff;
+    position: relative;
+  }
+  .modal__right-side {
+    width: 100%;
+  }
+  .modal__title {
+    padding: 1rem 1rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+  }
+}

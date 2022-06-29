@@ -152,7 +152,7 @@
 .product-card {
   display: flex;
   flex-direction: column;
-  width: 11rem;
+  width: 23%;
   cursor: pointer;
   padding: 0.4rem 0.3rem;
   border-radius: 7px;
@@ -216,5 +216,38 @@
   }
   75% {
     transform: scale(1.1);
+  }
+}
+
+@media (max-width: 780px) {
+  .about {
+    &__container {
+      display: grid;
+      justify-items: center;
+      grid-template-columns: none;
+      grid-template-areas:
+        "about-tntn about-tntn"
+        "img-1 img-2"
+        "img-1 img-4"
+        "about-us about-us"
+        "img-3 img-5";
+    }
+  }
+
+  .top-products {
+    & .product-card {
+      width: 48%;
+    }
+  }
+
+  .advantages {
+    &__item {
+      display: flex;
+      align-items: center;
+      white-space: normal;
+      & p {
+        margin-left: 1.3rem;
+      }
+    }
   }
 }

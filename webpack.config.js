@@ -5,6 +5,7 @@ const fs = require("fs");
 const isDev = process.env.NODE_ENV === "development";
 const isProd = !isDev;
 const CopyPlugin = require("copy-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 // const filename = (ext) => (isDev ? `[name].${ext}` : `[name].[contenthash].${ext}`);
 const filename = (ext) => `[name].${ext}`;
@@ -55,18 +56,26 @@ module.exports = {
       },
       {
         test: /\.(scss|css)$/,
-        use: ["style-loader", "css-loader", "postcss-loader", "sass-loader"],
+        use: [
+          MiniCssExtractPlugin.loader,
+          "css-loader",
+          "postcss-loader",
+          "sass-loader",
+        ],
       },
       {
         test: /\.(html)$/,
         use: {
           loader: "html-loader",
-          options: {},
         },
       },
       {
-        test: /\.(?:ico|png|gif|jpg|jpeg|svg|webp)$/i,
+        test: /\.(?:ico|png|gif|jpg|jpeg|webp)$/i,
         type: "asset/resource",
+      },
+      {
+        test: /\.(?:svg)$/i,
+        type: "asset/inline",
       },
       // {
       //   test: /\.png$/i,
@@ -82,6 +91,7 @@ module.exports = {
     // ...
     // применять изменения только при горячей перезагрузке
     new webpack.HotModuleReplacementPlugin(),
+    new MiniCssExtractPlugin(),
     new CopyPlugin({
       patterns: [
         {

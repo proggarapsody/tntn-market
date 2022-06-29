@@ -1,3 +1,8 @@
+import SimpleBar from "simplebar";
+export const simpleBar = new SimpleBar(
+  document.querySelector(".modal-content")
+);
+
 window.addEventListener("load", async () => {
   const res = await fetch("./db.json");
 
@@ -32,6 +37,7 @@ window.addEventListener("load", async () => {
           .closest(".product-card")
           .getAttribute("data-index");
         openModal(products[cardId]);
+        simpleBar.recalculate();
       });
     });
   }
