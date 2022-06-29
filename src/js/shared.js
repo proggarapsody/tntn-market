@@ -1,4 +1,5 @@
 import "../assets/header-bg.png";
+import "../assets/header-bg.jpg";
 import "../assets/products-bg.png";
 import "../assets/big-logo.png";
 
