@@ -16,7 +16,7 @@ window.addEventListener("load", () => {
       opacity: "0",
       delay: 0.1,
       duration: 0.6,
-    })
+      })
     .to(".header", {
       height: window.innerWidth > 790 ? "60vh" : "40vh",
       duration: window.innerWidth > 790 ? 0.5 : 1,
