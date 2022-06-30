@@ -6,7 +6,7 @@ window.addEventListener("load", () => {
 
   tl.from(".header", {
     height: "0vh",
-    duration: window.innerWidth > 790 ? 0.5 : 1.2,
+    duration: window.innerWidth > 790 ? 0.4 : 0.5,
   })
     .from(".header__nav", {
       opacity: "0",
@@ -16,10 +16,10 @@ window.addEventListener("load", () => {
       opacity: "0",
       delay: 0.1,
       duration: 0.6,
-      })
+    })
     .to(".header", {
       height: window.innerWidth > 790 ? "60vh" : "40vh",
-      duration: window.innerWidth > 790 ? 0.5 : 1,
+      duration: window.innerWidth > 790 ? 0.5 : 0.6,
     })
     .to(".big-icon", {
       boxShadow: "3px 3px 4px #00000040",
@@ -35,11 +35,11 @@ window.addEventListener("load", () => {
 
   gsap.from("main", {
     opacity: "0",
-    delay: 0.8,
+    delay: 0.6,
   });
   gsap.from("footer", {
     opacity: "0",
-    delay: 0.8,
+    delay: 0.6,
   });
 
   gsap.from(".top-products", {

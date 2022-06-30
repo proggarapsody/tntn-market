@@ -1,3 +1,5 @@
+import { simpleBar } from "./products.js";
+
 let modal = document.querySelector(".modal");
 let modalContent = document.querySelector(".modal-content");
 
@@ -13,8 +15,6 @@ let links = document.querySelector(".modal__links");
 let closeButt = document.querySelector(".modal__close");
 
 function openModal(product) {
-  unloadScrollBars();
-
   image.innerHTML = `<img class="primary-img" alt="product-img" src="${product.primaryImg}"></img><img class="secondary-img" alt="product-img" src="${product.secondaryImg}"></img>`;
   title.textContent = product.name;
   if (product.description) {
@@ -57,9 +57,8 @@ function openModal(product) {
 if (closeButt) {
   closeButt.onclick = function () {
     cleanModal();
+    simpleBar.getScrollElement().scrollTop = 0;
     modal.style.display = "none";
-
-    reloadScrollBars();
   };
 }
 
@@ -67,9 +66,8 @@ if (closeButt) {
 window.onclick = function (event) {
   if (event.target == modal) {
     cleanModal();
+    simpleBar.getScrollElement().scrollTop = 0;
     modal.style.display = "none";
-
-    reloadScrollBars();
   }
 };
 
