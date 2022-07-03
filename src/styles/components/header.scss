@@ -4,7 +4,7 @@
   background-size: cover;
   width: 100%;
   position: relative;
-  border-bottom: 2px solid #e56671;
+  border-bottom: 0.1rem solid #e56671;
   height: 100vh;
   &__nav {
     z-index: 10;
@@ -13,8 +13,8 @@
     top: 0;
     font-family: "Comfortaa";
     font-weight: 700;
-    font-size: 0.7rem;
-    height: fit-content;
+    font-size: 0.8rem;
+    height: 3rem;
     width: 100%;
     max-width: 100vw;
     display: flex;
@@ -27,7 +27,7 @@
     backdrop-filter: blur(7px);
     -webkit-backdrop-filter: blur(5px);
 
-    border-bottom: 2px solid rgba(0, 0, 0, 0.14);
+    border-bottom: 0.1rem solid rgba(0, 0, 0, 0.14);
 
     transition: top 0.2s ease-in, background 0.3s linear;
 
@@ -37,6 +37,11 @@
         text-decoration: underline;
         transition: all 0.1s;
       }
+    }
+
+    & svg {
+      height: 2rem;
+      width: 2rem;
     }
 
     &:hover {
@@ -55,6 +60,8 @@
 
 .main-icon {
   margin: 0 1rem;
+  height: 2.2rem;
+  width: 2.2rem;
   & svg {
     width: 100%;
     height: 100%;
@@ -76,7 +83,7 @@
 @media (max-width: 780px) {
   .header {
     &__nav {
-      font-size: 1rem;
+      font-size: 0.8rem;
     }
   }
 
