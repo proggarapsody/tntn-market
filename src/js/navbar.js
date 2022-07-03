@@ -1,7 +1,8 @@
 import { gsap } from "gsap";
-let prevScroll = window.pageYOffset;
 
 window.addEventListener("load", () => {
+  let prevScroll = window.pageYOffset;
+
   const tl = gsap.timeline();
 
   tl.from(".header", {
@@ -47,19 +48,18 @@ window.addEventListener("load", () => {
     duration: 1,
     delay: 1,
   });
+  window.onscroll = function () {
+    let currentScroll = window.pageYOffset;
+
+    // if (currentScroll == 0) {
+    //   document.querySelector(".header__nav").style.background = "transparent";
+    // }
+
+    if (prevScroll > currentScroll) {
+      document.querySelector(".header__nav").style.top = 0;
+    } else {
+      document.querySelector(".header__nav").style.top = "-100px";
+    }
+    prevScroll = currentScroll;
+  };
 });
-
-window.onscroll = function () {
-  let currentScroll = window.pageYOffset;
-
-  // if (currentScroll == 0) {
-  //   document.querySelector(".header__nav").style.background = "transparent";
-  // }
-
-  if (prevScroll > currentScroll) {
-    document.querySelector(".header__nav").style.top = 0;
-  } else {
-    document.querySelector(".header__nav").style.top = "-100px";
-  }
-  prevScroll = currentScroll;
-};

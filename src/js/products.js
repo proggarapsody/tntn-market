@@ -1,8 +1,3 @@
-import SimpleBar from "simplebar";
-export const simpleBar = new SimpleBar(
-  document.querySelector(".modal-content")
-);
-
 window.addEventListener("load", async () => {
   const res = await fetch("./db.json");
 
@@ -11,7 +6,7 @@ window.addEventListener("load", async () => {
   const catalogProducts = document.querySelector(".products__content");
 
   if (topProducts) {
-    for (let i = 0; i < 4; i++) {
+    for (let i = 0; i < 8; i += 2) {
       topProducts.innerHTML += `<div class="product-card open-modal" data-index="${i}"><div class="product-card__img-container"><img src="${products[i].primaryImg}" alt="product-img"/></div><p class="product-card__title">${products[i].name}</p>
       </div>`;
     }
@@ -37,7 +32,6 @@ window.addEventListener("load", async () => {
           .closest(".product-card")
           .getAttribute("data-index");
         openModal(products[cardId]);
-        simpleBar.recalculate();
       });
     });
   }

@@ -46,7 +46,7 @@
         transition: all 0.1s;
       }
       & svg {
-        fill: #ffffff;
+        fill: #ffffff !important;
         transition: all 0.1s;
       }
     }
@@ -77,6 +77,18 @@
   .header {
     &__nav {
       font-size: 1rem;
+    }
+  }
+
+  .big-icon {
+    position: absolute;
+    bottom: 15vh;
+    left: 3rem;
+    width: 60%;
+
+    padding: 2px;
+    & img {
+      width: 100%;
     }
   }
 }

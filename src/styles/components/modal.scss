@@ -8,7 +8,8 @@
   height: 100%; /* Full height */
   overflow: auto; /* Enable scroll if needed */
   background: rgba(0, 0, 0, 0.4);
-
+  animation: fade 0.05s linear;
+  transition: opacity 0.1s linear;
   &__title {
     z-index: 5;
     background-color: #ffffff;
@@ -19,6 +20,10 @@
     position: sticky;
     top: 0;
     right: 0;
+  }
+
+  & img {
+    animation: fade 0.6s linear;
   }
   &__description {
     font-size: 0.8rem;
@@ -166,15 +171,21 @@
 
 .ozon-link {
   color: #0500ff;
+  padding: 0.5rem;
+  border-radius: 7px;
   &:hover {
-    font-weight: 700;
+    background-color: #0048ff37;
+    text-decoration: underline;
   }
 }
 
 .wildberries-link {
   color: #bd00aa;
+  padding: 0.5rem;
+  border-radius: 7px;
   &:hover {
-    font-weight: 700;
+    background-color: #bd00aa25;
+    text-decoration: underline;
   }
 }
 
@@ -233,5 +244,17 @@
   .modal__close {
     height: 1rem;
     width: 1rem;
+  }
+  .modal__close-butt {
+    padding: 0.4rem;
+  }
+}
+
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }

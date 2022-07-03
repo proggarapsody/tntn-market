@@ -59,7 +59,24 @@ module.exports = {
         use: [
           MiniCssExtractPlugin.loader,
           "css-loader",
-          "postcss-loader",
+          {
+            loader: "postcss-loader",
+            options: {
+              postcssOptions: {
+                plugins: [
+                  [
+                    "postcss-preset-env",
+                    {
+                      autoprefixer: {
+                        grid: true,
+                        flex: true,
+                      },
+                    },
+                  ],
+                ],
+              },
+            },
+          },
           "sass-loader",
         ],
       },
@@ -73,9 +90,13 @@ module.exports = {
         test: /\.(?:ico|png|gif|jpg|jpeg|webp)$/i,
         type: "asset/resource",
       },
+      // {
+      //   test: /\.(?:svg)$/i,
+      //   type: "asset/inline",
+      // },
       {
-        test: /\.(?:svg)$/i,
-        type: "asset/inline",
+        test: /\.svg$/,
+        use: "svg-sprite-loader",
       },
       // {
       //   test: /\.png$/i,

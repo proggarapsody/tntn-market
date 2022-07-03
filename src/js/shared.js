@@ -40,3 +40,8 @@ import "../assets/7-descr.jpg";
 import "../assets/8-descr.jpg";
 import "../assets/9-descr.jpg";
 import "../assets/10-descr.jpg";
+
+import "../assets/favicon.ico";
+
+import "../assets/icons/header-logo.svg";
+import "../assets/icons/close-modal.svg";
