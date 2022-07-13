@@ -79,11 +79,7 @@
   }
   & img {
     transition: all 0.1s ease-in;
-    &:hover {
-      transform: scale(1.07);
-      transition: all 0.1s ease-in;
-      box-shadow: 0px 4px 6px 0px #e56671;
-    }
+   
   }
 }
 
@@ -219,7 +215,7 @@
   }
 }
 
-@media (max-width: 780px) {
+@media (max-width: 820px) {
   .about {
     &__container {
       display: grid;
